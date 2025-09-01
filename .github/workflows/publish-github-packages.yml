@@ -27,20 +27,8 @@ jobs:
 
       - name: Authenticate with GitHub Packages
         run: |
-          echo "@${GITHUB_REPOSITORY_OWNER}:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-
-      - name: Log file content
-        run: |
-          echo "===== FILE START ====="
-          cat ~/.npmrc
-          echo "===== FILE END ====="
-
-      - name: Log file content
-        run: |
-          echo "===== FILE START ====="
-          cat ~/package.json
-          echo "===== FILE END ====="
+          echo "@${GITHUB_REPOSITORY_OWNER}:registry=https://npm.pkg.github.com" > $GITHUB_WORKSPACE/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_WORKSPACE/.npmrc
 
       - name: Install dependencies
         run: npm install
