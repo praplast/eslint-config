@@ -26,6 +26,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexeyVanyukevich/eslint-config.git"
+    "url": "git+https://github.com/praplast/eslint-config.git"
   }
 }
