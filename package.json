@@ -1,0 +1,31 @@
+{
+  "name": "eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint config for projects",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "lint",
+    "linter"
+  ],
+  "scripts": {
+    "test": "npm run -s lint",
+    "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\"",
+    "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\"",
+    "lint:fix": "eslint . --fix && prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\""
+  },
+  "devDependencies": {
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeyVanyukevich/eslint-config.git"
+  }
+}
