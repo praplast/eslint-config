@@ -18,6 +18,10 @@ jobs:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
 
+      - name: Add GitHub scope dynamically
+        run: |
+          npm pkg set name=@${GITHUB_REPOSITORY_OWNER}/$(node -p "require('./package.json').name")
+
       - name: Authenticate with GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
